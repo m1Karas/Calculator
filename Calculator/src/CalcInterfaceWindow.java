@@ -10,10 +10,18 @@ import javax.swing.JTextField;
 import javax.swing.JTextArea;
 import javax.swing.JTextPane;
 
-public class CalcInterfaceWindow {
+public class CalcInterfaceWindow 
+{
 
 	private JFrame CalculatorWindow;
 	private JTextField EntryField;
+	
+	public int operationType;
+	public int x;
+	public int y;
+	public int operationArray[];
+	
+	public double CalcArray[];
 
 	/**
 	 * Launch the application.
@@ -28,7 +36,10 @@ public class CalcInterfaceWindow {
 				{
 					CalcInterfaceWindow window = new CalcInterfaceWindow();
 					window.CalculatorWindow.setVisible(true);
-				} catch (Exception e) {
+				} 
+				
+				catch (Exception e) 
+				{
 					e.printStackTrace();
 				}
 			}
@@ -165,24 +176,38 @@ public class CalcInterfaceWindow {
 		BtnNine.setBounds(203, 267, 62, 61);
 		CalculatorWindow.getContentPane().add(BtnNine);
 		
-		JButton BtnAdd = new JButton("+");
+		JButton BtnAdd = new JButton("+"); // Addition
 		BtnAdd.addActionListener(new ActionListener() 
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
-				int operationType = 1;
-				int x = EntryField.getText();
+				//String entry = EntryField.getText();
+				//EntryField.setText(entry + "+");	
+				
+				operationType = 1;
+				String input = EntryField.getText();
+				
+				operationArray[x] = operationType;
+				x++;
+				
+				double entry = Double.parseDouble(input);
+				
+				CalcArray[y] = entry;
+				y++;
+				
+				EntryField.setText("");
 			}
 		});
 		BtnAdd.setBounds(277, 267, 62, 61);
 		CalculatorWindow.getContentPane().add(BtnAdd);
 		
-		JButton BtnSubtract = new JButton("-");
+		JButton BtnSubtract = new JButton("-"); //Subtraction
 		BtnSubtract.addActionListener(new ActionListener() 
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
-				
+				//String entry = EntryField.getText();
+				//EntryField.setText(entry + "-");
 			}
 		});
 		BtnSubtract.setBounds(277, 194, 62, 61);
@@ -193,8 +218,8 @@ public class CalcInterfaceWindow {
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
-				String entry = EntryField.getText();
-				EntryField.setText(entry + "(");
+				//String entry = EntryField.getText();
+				//EntryField.setText(entry + "(");
 			}
 		});
 		BtnLeftBracket.setBounds(277, 123, 62, 61);
@@ -224,18 +249,19 @@ public class CalcInterfaceWindow {
 		BtnDecimal.setBounds(203, 340, 62, 61);
 		CalculatorWindow.getContentPane().add(BtnDecimal);
 		
-		JButton BtnExponant = new JButton("^");
+		JButton BtnExponant = new JButton("^"); //Exponent
 		BtnExponant.addActionListener(new ActionListener() 
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
-				
+				//String entry = EntryField.getText();
+				//EntryField.setText(entry + "^");
 			}
 		});
 		BtnExponant.setBounds(277, 340, 62, 61);
 		CalculatorWindow.getContentPane().add(BtnExponant);
 		
-		JButton BtnEqual = new JButton("=");
+		JButton BtnEqual = new JButton("="); //Gives the answer
 		BtnEqual.addActionListener(new ActionListener() 
 		{
 			public void actionPerformed(ActionEvent e) 
@@ -251,14 +277,14 @@ public class CalcInterfaceWindow {
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
-				String entry = EntryField.getText();
-				EntryField.setText(entry + ")");
+				//String entry = EntryField.getText();
+				//EntryField.setText(entry + ")");
 			}
 		});
 		BtnRightBracket.setBounds(351, 123, 62, 61);
 		CalculatorWindow.getContentPane().add(BtnRightBracket);
 		
-		JButton BtnDivision = new JButton("/");
+		JButton BtnDivision = new JButton("/"); //Division
 		BtnDivision.addActionListener(new ActionListener() 
 		{
 			public void actionPerformed(ActionEvent e) 
@@ -269,23 +295,25 @@ public class CalcInterfaceWindow {
 		BtnDivision.setBounds(351, 194, 62, 61);
 		CalculatorWindow.getContentPane().add(BtnDivision);
 		
-		JButton BtnMultiply = new JButton("x");
+		JButton BtnMultiply = new JButton("x"); //Multiplication
 		BtnMultiply.addActionListener(new ActionListener() 
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
-				
+				//String entry = EntryField.getText();
+				//EntryField.setText(entry + "*");
 			}
 		});
 		BtnMultiply.setBounds(351, 267, 62, 61);
 		CalculatorWindow.getContentPane().add(BtnMultiply);
 		
-		JButton BtnSqrRt = new JButton("√");
+		JButton BtnSqrRt = new JButton("√"); //Square
 		BtnSqrRt.addActionListener(new ActionListener() 
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
-				
+				//String entry = EntryField.getText();
+				//EntryField.setText(entry + "√(");
 			}
 		});
 		BtnSqrRt.setBounds(351, 340, 62, 61);
@@ -296,7 +324,7 @@ public class CalcInterfaceWindow {
 		CalculatorWindow.getContentPane().add(EntryField);
 		EntryField.setColumns(10);
 		
-		JButton BtnClear = new JButton("C");
+		JButton BtnClear = new JButton("C"); //Clear
 		BtnClear.addActionListener(new ActionListener() 
 		{
 			public void actionPerformed(ActionEvent e) 
