@@ -10,6 +10,7 @@ import javax.swing.JTextField;
 import javax.swing.JTextArea;
 import javax.swing.JTextPane;
 
+
 public class CalcInterfaceWindow 
 {
 
@@ -19,7 +20,6 @@ public class CalcInterfaceWindow
 	public int operationType;
 	public int x;
 	public int y;
-	public int operationArray[];
 	
 	public double CalcArray[];
 
@@ -181,21 +181,9 @@ public class CalcInterfaceWindow
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
-				//String entry = EntryField.getText();
-				//EntryField.setText(entry + "+");	
+				String entry = EntryField.getText();
+				EntryField.setText(entry + "+");
 				
-				operationType = 1;
-				String input = EntryField.getText();
-				
-				operationArray[x] = operationType;
-				x++;
-				
-				double entry = Double.parseDouble(input);
-				
-				CalcArray[y] = entry;
-				y++;
-				
-				EntryField.setText("");
 			}
 		});
 		BtnAdd.setBounds(277, 267, 62, 61);
@@ -206,8 +194,8 @@ public class CalcInterfaceWindow
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
-				//String entry = EntryField.getText();
-				//EntryField.setText(entry + "-");
+				String entry = EntryField.getText();
+				EntryField.setText(entry + "-");
 			}
 		});
 		BtnSubtract.setBounds(277, 194, 62, 61);
@@ -218,8 +206,8 @@ public class CalcInterfaceWindow
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
-				//String entry = EntryField.getText();
-				//EntryField.setText(entry + "(");
+				String entry = EntryField.getText();
+				EntryField.setText(entry + "(");
 			}
 		});
 		BtnLeftBracket.setBounds(277, 123, 62, 61);
@@ -254,8 +242,8 @@ public class CalcInterfaceWindow
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
-				//String entry = EntryField.getText();
-				//EntryField.setText(entry + "^");
+				String entry = EntryField.getText();
+				EntryField.setText(entry + "^");
 			}
 		});
 		BtnExponant.setBounds(277, 340, 62, 61);
@@ -266,6 +254,8 @@ public class CalcInterfaceWindow
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
+				String entry = EntryField.getText();
+				
 				
 			}
 		});
@@ -277,8 +267,8 @@ public class CalcInterfaceWindow
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
-				//String entry = EntryField.getText();
-				//EntryField.setText(entry + ")");
+				String entry = EntryField.getText();
+				EntryField.setText(entry + ")");
 			}
 		});
 		BtnRightBracket.setBounds(351, 123, 62, 61);
@@ -300,8 +290,8 @@ public class CalcInterfaceWindow
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
-				//String entry = EntryField.getText();
-				//EntryField.setText(entry + "*");
+				String entry = EntryField.getText();
+				EntryField.setText(entry + "*");
 			}
 		});
 		BtnMultiply.setBounds(351, 267, 62, 61);
@@ -312,8 +302,8 @@ public class CalcInterfaceWindow
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
-				//String entry = EntryField.getText();
-				//EntryField.setText(entry + "√(");
+				String entry = EntryField.getText();
+				EntryField.setText(entry + "√(");
 			}
 		});
 		BtnSqrRt.setBounds(351, 340, 62, 61);
